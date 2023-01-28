@@ -35,7 +35,18 @@ print (f'{crane_input // 6}, {crane_input // 6 * 4}, {crane_input // 6}')
 385916 -> yes
 123456 -> no
 '''
-
+ticket_input = int(input('Введите номер билета: '))
+ticket_first_digits_sum = 0
+ticket_last_digits_sum = 0
+for i in range (0, 3):
+   ticket_first_digits_sum += (ticket_input % 10)
+   ticket_input = ticket_input // 10
+for i in range (3, 6):
+    ticket_last_digits_sum += (ticket_input % 10)
+    ticket_input = ticket_input // 10
+if ticket_first_digits_sum == ticket_last_digits_sum:
+    print ("Yes")
+else: print ("No")
 
 '''
 Задача 4: Требуется определить, можно ли от шоколадки размером n × m долек 

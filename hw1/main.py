@@ -55,3 +55,11 @@ else: print ("No")
 3 2 4 -> yes
 3 2 1 -> no
 '''
+
+n = int (input("Количество долек в длину:"))
+m = int (input("Количество долек в ширину:"))
+k = int (input("Количество отламываемых долек:"))
+
+if ((n * m - k) % n == 0 or (n * m - k) % m == 0):
+    print ("Yes")
+else: print ("No")

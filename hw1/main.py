@@ -5,7 +5,7 @@
 '''
 # Масштабируемый вариант - под любое положительное число
 
-number_input = input('Введите число:')
+number_input = input('Введите число: ')
 number = int (number_input)
 digits_sum = 0
 for i in range (0, len(number_input)):
@@ -23,7 +23,8 @@ print (digits_sum)
 60 -> 10  40  10
 '''
 
-
+crane_input = int (input("Введите количество журавликов (кратное 6): "))
+print (f'{crane_input // 6}, {crane_input // 6 * 4}, {crane_input // 6}')
 
 '''
 Задача 3: Вы пользуетесь общественным транспортом? 

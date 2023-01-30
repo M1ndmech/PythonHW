@@ -10,30 +10,30 @@ import math
 5 -> 1 0 1 1 0
 '''
 
-# def random_int_list (length, min, max):
-#     list = []
-#     for i in range (length):
-#         list.append(random.randint(min,max))
-#     return list
+def random_int_list (length, min, max):
+    list = []
+    for i in range (length):
+        list.append(random.randint(min,max))
+    return list
 
-# def turn_coins_over (list):
-#     i = 0
-#     heads, tails = 0, 0
-#     while (i < len(list)):
-#         if list[i] == 0:
-#             heads += 1
-#         else:
-#             tails += 1
-#         i += 1
-#     if heads > tails:
-#         return (tails)
-#     else:
-#         return (heads)
+def turn_coins_over (list):
+    i = 0
+    heads, tails = 0, 0
+    while (i < len(list)):
+        if list[i] == 0:
+            heads += 1
+        else:
+            tails += 1
+        i += 1
+    if heads > tails:
+        return (tails)
+    else:
+        return (heads)
 
-# coins_input = int(input("Введите количество монет на столе: "))
-# coins_list = random_int_list(coins_input, 0, 1)
-# print(coins_list)
-# print(turn_coins_over(coins_list))
+coins_input = int(input("Введите количество монет на столе: "))
+coins_list = random_int_list(coins_input, 0, 1)
+print(coins_list)
+print(turn_coins_over(coins_list))
 
 
 '''
@@ -70,10 +70,28 @@ p = int(input("Введите вторую подсказку - произвед
 print (quadratic_equation (1, -s, p))
 
 
-
 '''
 Задача №3:
 Требуется вывести все целые степени двойки (т.е. числа вида 2k), не превосходящие числа N.
 Пример:
 10 -> 1 2 4 8
 '''
+
+def power_list (number, limit):
+    list = []
+    i = 0
+    n = 0
+    for i in range (limit):
+        n = number**i
+        if n > limit:
+            break
+        else:
+            list.append(n)
+        i += 1
+        
+    return list
+
+number_input = int(input("Введите число для построения ряда: "))
+limit_input = int(input("Введите верхний предел ряда: "))
+
+print (power_list(number_input, limit_input))

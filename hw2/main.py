@@ -1,4 +1,5 @@
 import random
+import math
 
 '''
 Задача №1:
@@ -9,43 +10,64 @@ import random
 5 -> 1 0 1 1 0
 '''
 
-def random_int_list (length, min, max):
-    list = []
-    for i in range (length):
-        list.append(random.randint(min,max))
-    return list
+# def random_int_list (length, min, max):
+#     list = []
+#     for i in range (length):
+#         list.append(random.randint(min,max))
+#     return list
 
-def turn_coins_over (list):
-    i = 0
-    heads = 0
-    tails = 0
-    while (i < len(list)):
-        if list[i] == 0:
-            heads += 1
-        else:
-            tails += 1
-        i += 1
-    if heads > tails:
-        return (tails)
-    else:
-        return (heads)
+# def turn_coins_over (list):
+#     i = 0
+#     heads, tails = 0, 0
+#     while (i < len(list)):
+#         if list[i] == 0:
+#             heads += 1
+#         else:
+#             tails += 1
+#         i += 1
+#     if heads > tails:
+#         return (tails)
+#     else:
+#         return (heads)
 
-coins_input = int(input("Введите количество монет на столе: "))
-coins_list = random_int_list(coins_input, 0, 1)
-print(coins_list)
-print(turn_coins_over(coins_list))
+# coins_input = int(input("Введите количество монет на столе: "))
+# coins_list = random_int_list(coins_input, 0, 1)
+# print(coins_list)
+# print(turn_coins_over(coins_list))
 
 
 '''
 Задача №2:
-Петя и Катя – брат и сестра. Петя – студент, а Катя – школьница. 
-Петя помогает Кате по математике. Он задумывает два натуральных числа X и Y (X,Y≤1000), а Катя должна их отгадать. 
+Петя и Катя – брат и сестра. Петя – студент, а Катя – школьница. Петя помогает Кате по математике. 
+Он задумывает два натуральных числа X и Y (X,Y≤1000), а Катя должна их отгадать. 
 Для этого Петя делает две подсказки. Он называет сумму этих чисел S и их произведение P. 
 Помогите Кате отгадать задуманные Петей числа.
 Пример:
 4 4 -> 2 2
-5 6 -> 2
+5 6 -> 2 3
 '''
+
+def quadratic_equation (a, b, c):
+    d = b ** 2 - 4 * a * c
+    if (d < 0):
+        return ("No answer")
+    elif (d == 0):
+        x_1 = -b / (2 * a)
+        return (x_1)
+    else:
+        x_1 = (-b + math.sqrt(d))/(2 * a)
+        x_2 = (-b - math.sqrt(d))/(2 * a)
+        return (x_1, x_2)
+
+s = int(input("Введите первую подсказку - сумму двух чисел: "))
+p = int(input("Введите вторую подсказку - произведение двух чисел: "))
+
+# x + y == s
+# x * y == p
+# x*(s - x) == p
+# x^2 - s*x + p == 0
+
+print (quadratic_equation (1, -s, p))
 
 
 

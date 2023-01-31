@@ -53,7 +53,7 @@ def quadratic_equation (a, b, c):
         return ("No answer")
     elif (d == 0):
         x_1 = -b / (2 * a)
-        return (x_1)
+        return (x_1, x_1)
     else:
         x_1 = (-b + math.sqrt(d))/(2 * a)
         x_2 = (-b - math.sqrt(d))/(2 * a)

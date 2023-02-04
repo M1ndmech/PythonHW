@@ -1,4 +1,6 @@
 import random
+import math
+
 '''
 Требуется вычислить, сколько раз встречается некоторое число X в массиве A[1..N]. 
 Пользователь в первой строке вводит натуральное число N – количество элементов в массиве. 
@@ -42,8 +44,23 @@ else:
 X = 6
 -> 5
 '''
+def lookup_closest_value (list, number):
+    closest = list [0]
+    for i in range (1, len (list)):
+        if (abs(list [i] - number)) < (abs(closest - number)):
+            closest = list [i]
+    return closest
 
-
+length_input_2 = int(input("Введите длину списка: "))
+min_input_2 = int(input("Введите минимальное значение списка: "))
+max_input_2 = int(input("Введите максимальное значение списка: "))
+number_input_2 = int(input("Введите искомое число: "))
+list2 = random_int_list(length_input_2, min_input_2, max_input_2)
+print (list2)
+if (lookup_closest_value(list2, number_input_2) == number_input_2):
+    print (f'В списке присутствует искомое число {lookup_closest_value(list2, number_input_2)}')
+else:
+    print (f'Ближайшее к числу {number_input_2} число в списке равно {lookup_closest_value(list2, number_input_2)}')
 
 '''
 В настольной игре Скрабл (Scrabble) каждая буква имеет определенную ценность. 

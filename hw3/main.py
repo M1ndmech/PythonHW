@@ -35,6 +35,7 @@ if count_number_in_values(list1, number_input) == 0:
 else:
     print (f'Количество вхождений числа {number_input} в списке - {count_number_in_values(list1, number_input)}')
 
+
 '''
 Требуется найти в массиве A[1..N] самый близкий по величине элемент к заданному числу X. 
 Пользователь в первой строке вводит натуральное число N – количество элементов в массиве. 
@@ -61,6 +62,7 @@ if (lookup_closest_value(list2, number_input_2) == number_input_2):
     print (f'В списке присутствует искомое число {lookup_closest_value(list2, number_input_2)}')
 else:
     print (f'Ближайшее к числу {number_input_2} число в списке равно {lookup_closest_value(list2, number_input_2)}')
+
 
 '''
 В настольной игре Скрабл (Scrabble) каждая буква имеет определенную ценность. 

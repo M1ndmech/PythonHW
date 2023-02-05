@@ -11,29 +11,29 @@ import math
 -> 1
 '''
 
-def random_int_list (length, min, max):
-    list = []
-    for i in range (length):
-        list.append(random.randint(min,max))
-    return list
+# def random_int_list (length, min, max):
+#     list = []
+#     for i in range (length):
+#         list.append(random.randint(min,max))
+#     return list
 
-def count_number_in_values (list, number):
-    counter = 0
-    for item in list:
-        if item == number:
-            counter += 1
-    return counter
+# def count_number_in_values (list, number):
+#     counter = 0
+#     for item in list:
+#         if item == number:
+#             counter += 1
+#     return counter
 
-length_input = int(input("Введите длину списка: "))
-min_input = int(input("Введите минимальное значение списка: "))
-max_input = int(input("Введите максимальное значение списка: "))
-number_input = int(input("Введите искомое число: "))
-list1 = random_int_list(length_input, min_input, max_input)
-print (list1)
-if count_number_in_values(list1, number_input) == 0:
-    print (f'Число {number_input} в списке не найдено')
-else:
-    print (f'Количество вхождений числа {number_input} в списке - {count_number_in_values(list1, number_input)}')
+# length_input = int(input("Введите длину списка: "))
+# min_input = int(input("Введите минимальное значение списка: "))
+# max_input = int(input("Введите максимальное значение списка: "))
+# number_input = int(input("Введите искомое число: "))
+# list1 = random_int_list(length_input, min_input, max_input)
+# print (list1)
+# if count_number_in_values(list1, number_input) == 0:
+#     print (f'Число {number_input} в списке не найдено')
+# else:
+#     print (f'Количество вхождений числа {number_input} в списке - {count_number_in_values(list1, number_input)}')
 
 
 '''
@@ -45,23 +45,23 @@ else:
 X = 6
 -> 5
 '''
-def lookup_closest_value (list, number):
-    closest = list [0]
-    for i in range (1, len (list)):
-        if (abs(list [i] - number)) < (abs(closest - number)):
-            closest = list [i]
-    return closest
+# def lookup_closest_value (list, number):
+#     closest = list [0]
+#     for i in range (1, len (list)):
+#         if (abs(list [i] - number)) < (abs(closest - number)):
+#             closest = list [i]
+#     return closest
 
-length_input_2 = int(input("Введите длину списка: "))
-min_input_2 = int(input("Введите минимальное значение списка: "))
-max_input_2 = int(input("Введите максимальное значение списка: "))
-number_input_2 = int(input("Введите искомое число: "))
-list2 = random_int_list(length_input_2, min_input_2, max_input_2)
-print (list2)
-if (lookup_closest_value(list2, number_input_2) == number_input_2):
-    print (f'В списке присутствует искомое число {lookup_closest_value(list2, number_input_2)}')
-else:
-    print (f'Ближайшее к числу {number_input_2} число в списке равно {lookup_closest_value(list2, number_input_2)}')
+# length_input_2 = int(input("Введите длину списка: "))
+# min_input_2 = int(input("Введите минимальное значение списка: "))
+# max_input_2 = int(input("Введите максимальное значение списка: "))
+# number_input_2 = int(input("Введите искомое число: "))
+# list2 = random_int_list(length_input_2, min_input_2, max_input_2)
+# print (list2)
+# if (lookup_closest_value(list2, number_input_2) == number_input_2):
+#     print (f'В списке присутствует искомое число {lookup_closest_value(list2, number_input_2)}')
+# else:
+#     print (f'Ближайшее к числу {number_input_2} число в списке равно {lookup_closest_value(list2, number_input_2)}')
 
 
 '''
@@ -110,12 +110,12 @@ def scrabble (word):
         
     list_scr = list(word.upper())
     score = 0
-    if list_scr[0] in list(dict_rus.keys()):
+    if list_scr[0] in list(dict_rus):
         for item in list_scr:
             score += int(dict_rus.get(item))
-    else:
-        for item in list_scr:
-            score += int(dict_eng.get(item))
+        return score
+    for item in list_scr:
+        score += int(dict_eng.get(item))
     return score
 
 scrabble_word = input("Введите слово для игры: ")

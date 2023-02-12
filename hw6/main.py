@@ -1,3 +1,4 @@
+import random
 '''
 Заполните массив элементами арифметической прогрессии. 
 Её первый элемент, разность и количество элементов нужно ввести с клавиатуры. 
@@ -26,4 +27,28 @@ print (progression(a_input, d_input, n_input))
 Ввод: [7, 10]
 Вывод: [1, 9, 13, 14, 19]
 '''
+
+def random_int_list (length, min, max):
+    list = []
+    for i in range (length):
+        list.append(random.randint(min,max))
+    return list
+
+def get_indexes (list1, start_input, end_input) -> list:
+    indexes = []
+    for i in range(len(list1)):
+        if list1[i] >= start_input and list1[i] <= end_input:
+            indexes.append(i)
+    return indexes
+
+a_length = int(input('Введите длину списка:'))
+a_start = int(input('Введите минимальное значение списка:'))
+a_end = int(input('Введите максимальное значение списка:'))
+a_list = random_int_list(a_length, a_start, a_end)
+
+start_input = int(input('Введите начало диапазона:'))
+end_input = int(input('Введите начало диапазона:'))
+
+print (a_list)
+print(get_indexes(a_list, start_input, end_input))
 

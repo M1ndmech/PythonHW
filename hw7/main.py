@@ -14,7 +14,9 @@ def str_counter_list (input_list, benchlist):
     for part in input_list:
        count_list.append(sum(map(lambda item, sum = 0: sum + 1 if item in benchlist else sum, part)))
     return count_list
-# как корректно прописать без цикла список, вложенный в список? постоянные ошибки синтаксиса
+
+# как корректно прописать без цикла список, вложенный в список, являющийся аргументом? 
+# Постоянно ловлю ошибки синтаксиса, оставил рабочую версию
 
 input_Pooh = input("Введите стих или нажмите Enter:") or "пара-ра-рам рам-пам-папам па-ра-па-дам"
 list_Pooh = input_Pooh.split(" ")
@@ -35,6 +37,11 @@ else: print ("Пам парам")
 print_operation_table(lambda x, y: x * y)  
 Вывод: таблица умножения от 1 до 6 (1:36)
 '''
-# 1, 1    1, 2    1, 3
-# 2, 1    2, 2    2, 3
 
+def print_operation_table(operation, numRows=6, numColumns=6):
+    for row in range(1, numRows+1):
+        for column in range(1, numColumns+1):
+            print(operation(row,column), end='\t')
+        print(" ")
+
+print_operation_table(lambda x, y: x*y)

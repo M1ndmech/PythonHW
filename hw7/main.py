@@ -10,9 +10,9 @@
 '''
 
 def str_counter_list (input_list, benchlist):
-    count_list = []
-    for part in input_list:
-       count_list.append(sum(map(lambda item, sum = 0: sum + 1 if item in benchlist else sum, part)))
+    count_list = [(sum(map(lambda item: 1 if item in benchlist else 0, part))) for part in input_list]
+    # for part in input_list:
+    #    count_list.append(sum(map(lambda item, sum = 0: sum + 1 if item in benchlist else sum, part)))
     return count_list
 
 # как корректно прописать без цикла список, вложенный в список, являющийся аргументом? 
@@ -21,6 +21,8 @@ def str_counter_list (input_list, benchlist):
 input_Pooh = input("Введите стих или нажмите Enter:") or "пара-ра-рам рам-пам-папам па-ра-па-дам"
 list_Pooh = input_Pooh.split(" ")
 vowels = ("а", "у", "о", "ы", "э", "я", "ю", "ё", "и", "е")
+
+print(str_counter_list(list_Pooh, vowels))
 
 if len(set(str_counter_list(list_Pooh, vowels))) == 1:
     print("Парам пам-пам")
